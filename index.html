@@ -9,16 +9,17 @@
 			var c = document.querySelector("#c");
 			var ctx = c.getContext("2d");
 			
-			ctx.save();
 			ctx.fillStyle = 'blue';
-			ctx.translate(10,10);
-			ctx.fillRect(0,0,10,10);
+			ctx.fillRect(0,0,50,50);
+			
+			// Save state with blue fill
+			ctx.save();
+			ctx.fillStyle = 'green';
+			ctx.fillRect(100,100,10,10);
+			// Restore blue fill
 			ctx.restore();
 			
-			ctx.rotate(Math.PI/4);
-			ctx.translate(50,0);
-			ctx.fillStyle = 'green';
-			ctx.fillRect(0,0,10,10);
+			ctx.fillRect(200,10,20,20);
 			
 		</script>
 	</body>
